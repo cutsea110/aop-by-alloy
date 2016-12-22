@@ -30,7 +30,7 @@ fact ヤギと狼{
 	all t: Time | no p: 場所 | (山羊 + 狼) in p.居る.t and 農夫 not in p.居る.t
 }
 fact 定員{
-	all t: Time - first | #舟.居る.t <= 2 and 農夫 in 舟.居る.t
+	all t: Time - first | #舟.居る.t <= 2
 }
 
 pred init(t: Time){
@@ -38,7 +38,7 @@ pred init(t: Time){
 	舟.着.t in 此岸
 }
 pred done(t: Time){
-	(農夫 + 山羊 + キャベツ + 狼) in (舟 + 彼岸).居る.t
+	(農夫 + 山羊 + キャベツ + 狼) in 彼岸.居る.t
 }
 
 fun 対岸(p: 場所 - 舟) : one 場所 - 舟 {
@@ -48,14 +48,14 @@ fun 対岸(p: 場所 - 舟) : one 場所 - 舟 {
 fact Traces{
 	first.init
 	all t: Time - last | let t' = t.next {
-		-- 舟は岸を往復
-		舟.着.t' = 対岸[舟.着.t]
+		-- 農夫が乗らなきゃ移動はない
+		農夫 in 舟.居る.t' => 舟.着.t' = 対岸[舟.着.t] else 舟.着.t' = 舟.着.t
 		-- 乗り換え
 		let 舟着岸 = 舟.着.t |
 			(舟+舟着岸).居る.t' = (舟+舟着岸).居る.t and 対岸[舟着岸].居る.t' = 対岸[舟着岸].居る.t
 		}
-	last.done
+	some t: Time | t.done
 }
 
 pred show {}
-run show for 8 Time
+run show for 10 Time
