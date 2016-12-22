@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view nodetheme="Martha">
+
+<projection> <type name="Time"/> </projection>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="String"/>
+   <type name="Time"/>
+   <type name="univ"/>
+   <type name="&#x30ad;&#x30e3;&#x30d9;&#x30c4;"/>
+   <type name="&#x5c71;&#x7f8a;"/>
+   <type name="&#x72fc;"/>
+   <type name="&#x8fb2;&#x592b;"/>
+   <type name="seq/Int"/>
+</node>
+
+<node shape="Box" color="Yellow">
+   <type name="&#x5f7c;&#x5cb8;"/>
+</node>
+
+<node shape="House" color="Blue">
+   <type name="&#x821f;"/>
+</node>
+
+<node shape="Trapezoid" color="Green">
+   <type name="&#x6b64;&#x5cb8;"/>
+</node>
+
+<node style="Bold">
+   <set name="First" type="ordering/Ord"/>
+   <set name="Next" type="ordering/Ord"/>
+</node>
+
+<node visible="no">
+   <type name="&#x4e57;&#x7d44;&#x54e1;"/>
+   <type name="ordering/Ord"/>
+</node>
+
+<node visible="yes">
+   <type name="&#x5834;&#x6240;"/>
+</node>
+
+<edge visible="no" attribute="yes">
+   <relation name="&#x5c45;&#x308b;"> <type name="&#x5834;&#x6240;"/> <type name="&#x4e57;&#x7d44;&#x54e1;"/> </relation>
+</edge>
+
+</view>
+
+</alloy>
