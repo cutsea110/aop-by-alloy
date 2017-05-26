@@ -29,7 +29,7 @@ pred show{
 --  leftDivRS[] = A -> C
 --  some leftDivRS[]
 --  no leftDivRS[]
-  some (A -> C) - leftDivRS[]
+--  some (A -> C) - leftDivRS[]
 --  some leftDivRS[] - (A -> C)
 }
 
