@@ -33,6 +33,8 @@ pred show{
 --  no leftDivRS[]
 --  some (C -> A) - leftDivRS[]
 --  some leftDivRS[] - (C -> A)
+-- 半可換?
+-- some S - leftDivRS.R
 }
 
 run show
