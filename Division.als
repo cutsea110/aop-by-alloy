@@ -28,11 +28,11 @@ fun leftDivRS[] : C -> A {
 -- {a: A| all b: B { b in a.R}}
 
 pred show{
---  leftDivRS[] = A -> C
+-- leftDivRS[] = C -> A
 --  some leftDivRS[]
 --  no leftDivRS[]
---  some (A -> C) - leftDivRS[]
---  some leftDivRS[] - (A -> C)
+--  some (C -> A) - leftDivRS[]
+--  some leftDivRS[] - (C -> A)
 }
 
 run show
