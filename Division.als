@@ -8,8 +8,7 @@ sig B{
 }
 
 sig C{
-  S: set B,
-  X: set A
+  S: set B
 }
 /*
 pred leftDiv {
@@ -29,12 +28,12 @@ fun leftDivRS[] : C -> A {
 
 pred show{
 -- leftDivRS[] = C -> A
---  some leftDivRS[]
+  some leftDivRS[]
 --  no leftDivRS[]
 --  some (C -> A) - leftDivRS[]
 --  some leftDivRS[] - (C -> A)
 -- 半可換?
-some S - leftDivRS.R
+-- some S - leftDivRS.R
 -- 可換?
 -- no S - leftDivRS.R
 }
