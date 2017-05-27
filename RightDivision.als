@@ -18,4 +18,4 @@ pred show{
   some rightDivSR[]
 }
 
-run show
+run show for 3 but exactly 2 A
