@@ -26,6 +26,12 @@ fun leftDivRS[] : C -> A {
 -- {c: C | all b : B { b in c.S}}
 -- {a: A| all b: B { b in a.R}}
 
+assert inS {
+  leftDivRS.R in S
+}
+
+check inS for 10
+
 pred show{
 -- leftDivRS[] = C -> A
   some leftDivRS[]
