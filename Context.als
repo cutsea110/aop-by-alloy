@@ -18,5 +18,9 @@ fun LambdaS[] : B -> set A {
   S & B -> B.S
 }
 
+fun Lambda[b : B] : B -> set A {
+  b -> b.S
+}
+
 run context
 
