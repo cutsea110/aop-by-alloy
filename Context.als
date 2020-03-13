@@ -14,5 +14,9 @@ pred context {
   some R & ~S.S
 }
 
+fun LambdaS[] : B -> set A {
+  S & B -> B.S
+}
+
 run context
 
