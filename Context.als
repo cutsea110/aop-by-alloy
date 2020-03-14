@@ -24,7 +24,11 @@ fun Lambda[b : B] : B -> set A {
 
 -- 最小
 fun minR[xs : A] : A {
-  { a : A | a in xs and all b : A - a { b in xs => a in R.b }}
+  min[R, xs]
+}
+
+fun min[r : A -> A, xs : A] : A {
+  { a : A | a in xs and all b : A - a { b in xs => a in r.b }}
 }
 
 -- 反射的
