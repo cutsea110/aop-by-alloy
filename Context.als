@@ -22,9 +22,29 @@ fun Lambda[b : B] : B -> set A {
   b -> b.S
 }
 
+-- 最小
 fun minR[xs : A] : A {
-  { a : A | a in xs and all b : A { b in xs => a in b.R }}
+  { a : A | a in xs and all b : A - a { b in xs => a in R.b }}
 }
 
-run context
+-- 反射的
+pred reflexiveR {
+  R.iden in R
+}
 
+-- 推移的
+pred transitiveR {
+  R.R in R
+}
+
+-- 前順序
+pred preorderR {
+  reflexiveR and transitiveR
+}
+
+-- 複数の最小元がある
+pred multiMin {
+  some disj x, x' : A { no (x.*R & x'.*R) and no (R - iden).x and no (R - iden).x' }
+}
+
+run { context and preorderR and multiMin } for 6
