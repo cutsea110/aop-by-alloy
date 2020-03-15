@@ -56,4 +56,9 @@ pred multiMin {
   some disj x, x' : A { no (x.*R & x'.*R) and no (R - iden).x and no (R - iden).x' }
 }
 
+-- FIXME!
+check {
+  preorderR and multiMin => minbound[R,A] = minbound[R & ~S.S, A]
+}
+
 run { context and preorderR and multiMin } for 6
