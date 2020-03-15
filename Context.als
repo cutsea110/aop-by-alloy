@@ -38,7 +38,7 @@ fun minbound[r : A -> A, xs : A] : A {
 
 -- 反射的
 pred reflexiveR {
-  R.iden in R
+  (iden & (A -> A)) in R
 }
 
 -- 推移的
@@ -58,7 +58,7 @@ pred multiMin {
 
 -- FIXME!
 check {
-  preorderR and multiMin => minbound[R,A] = minbound[R & ~S.S, A]
+  context and preorderR and multiMin => minbound[R,A] = minbound[R & ~S.S, A]
 }
 
 run { context and preorderR and multiMin } for 6
