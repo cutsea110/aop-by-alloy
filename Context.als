@@ -32,7 +32,7 @@ fun min[r : A -> A, xs : A] : A {
 }
 
 fun minbound[r : A -> A, xs : A] : A {
-  { a : A | a in xs and no r.a }
+  { a : A | a in xs and no (r-iden).a }
 }
 
 
