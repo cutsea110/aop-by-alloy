@@ -31,6 +31,11 @@ fun min[r : A -> A, xs : A] : A {
   { a : A | a in xs and all b : A - a { b in xs => a in r.b }}
 }
 
+fun minbound[r : A -> A, xs : A] : A {
+  { a : A | a in xs and no r.a }
+}
+
+
 -- 反射的
 pred reflexiveR {
   R.iden in R
