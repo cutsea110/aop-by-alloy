@@ -28,7 +28,7 @@ fun minR[xs : A] : A {
 }
 
 fun min[r : A -> A, xs : A] : A {
-  { a : A | a in xs and all b : A - a { b in xs => a in r.b }}
+  { a : A | a in xs and all b : A - a { b in xs => a in b.r }}
 }
 
 fun minbound[r : A -> A, xs : A] : A {
